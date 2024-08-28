@@ -2,6 +2,9 @@
 
 import Button from "@/app/components/Button";
 import Input from "@/app/components/input/Input"
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
@@ -40,17 +43,40 @@ const AuthForm = () => {
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
         if (variant === 'REGISTER'){
-            // Axios Register
+            axios.post('/api/register', data)
+            .catch(() => toast.error('Something went wrong!'))
+            .finally(() => setIsLoading(false)) 
         }
         if (variant === 'LOGIN') {
-            // NextAuth Signin
+            signIn('credentials', {
+                ...data,
+                redirect: false
+            })
+            .then((callback) => {
+                if(callback?.error) {
+                    toast.error('Invalid credentials');
+                }
+
+                if(callback?.ok && !callback?.error) {
+                    toast.success('Logged in!')
+                }
+            })
+            .finally(() => setIsLoading(false))
         }
     }
 
     const socialAction = (action: string) => {
         setIsLoading(true);
+        signIn(action, { redirect: false})
+        .then((callback) => {
+            if(callback?.error){
+                toast.error('Invalid Credentials');
+            }
 
-        // NextAuth Social Sign In
+            if(callback?.ok && !callback?.error){
+                toast.success('Logged in!')
+            }
+        })
     }
     return (
         <div className="
