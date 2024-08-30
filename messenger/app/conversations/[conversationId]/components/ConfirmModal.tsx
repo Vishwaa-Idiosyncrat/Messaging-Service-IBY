@@ -3,7 +3,7 @@
 import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal";
 import useConversation from "@/app/hooks/useConversation";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogTitle } from "@headlessui/react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
@@ -71,17 +71,19 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             sm:text-left
           "
         >
-          <Dialog.Title
-            as="h3"
-            className="
-              text-base
-              font-semibold
-              leading-6
-              text-gray-900
-            "
+          <DialogTitle
+            className="relative z-50"
           >
-            Delete conversation
-          </Dialog.Title>
+            <h3
+              className="
+                text-base
+                font-semibold
+                leading-6
+                text-gray-900
+              ">
+                Delete conversation
+              </h3>
+          </DialogTitle>
           <div className="mt-2">
             <p className="text-sm text-gray-500">
               Are you sure you want to delete this conversation? This action cannot be undone.

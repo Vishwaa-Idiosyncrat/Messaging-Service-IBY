@@ -4,7 +4,7 @@ import useOtherUser from "@/app/hooks/useOtherUser";
 import { Conversation, User } from "@prisma/client";
 import { Fragment, useMemo, useState } from "react";
 import { format } from "date-fns";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
 import { IoClose, IoTrash } from "react-icons/io5";
 import Avatar from "@/app/components/Avatar";
 import ConfirmModal from "./ConfirmModal";
@@ -53,7 +53,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
       />
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={onClose}>
-          <Transition.Child
+          <TransitionChild
             as={Fragment}
             enter="ease-out duration-500"
             enterFrom="opacity-0"
@@ -70,7 +70,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                 bg-opacity-40
               "
             />
-          </Transition.Child>
+          </TransitionChild>
 
           <div
             className="
@@ -95,7 +95,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                 max-w-full
                 pl-10
               ">
-                <Transition.Child
+                <TransitionChild
                   as={Fragment}
                   enter="transform transition ease-in-out duration-500"
                   enterFrom="translate-x-full"
@@ -103,7 +103,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                   leave="transform transition ease-in-out duration-500"
                   leaveTo="translate-x-full"
                 >
-                  <Dialog.Panel
+                  <DialogPanel
                     className="
                       pointer-events-auto
                       w-screen
@@ -316,8 +316,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                         </div>
                       </div>
                     </div>
-                  </Dialog.Panel>
-                </Transition.Child>
+                  </DialogPanel>
+                </TransitionChild>
               </div>
             </div>
           </div>
