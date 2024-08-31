@@ -17,7 +17,7 @@ const Modal: React.FC<ModalProps> = ({
   children
 }) => {
   return ( 
-    <TransitionRoot
+    <Transition.Root
       show={isOpen}
       as={Fragment}
     >
@@ -126,7 +126,7 @@ const Modal: React.FC<ModalProps> = ({
           </div>
         </div>
       </Dialog>
-    </TransitionRoot>
+    </Transition.Root>
    );
 }
  

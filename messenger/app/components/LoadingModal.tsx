@@ -7,7 +7,7 @@ import { ClipLoader } from "react-spinners";
 
 const LoadingModal = () => {
   return (
-    <TransitionRoot show as={Fragment}>
+    <Transition.Root show as={Fragment}>
       <Dialog 
         as="div" 
         className="relative z-50" 
@@ -55,7 +55,7 @@ const LoadingModal = () => {
           </div>
         </div>
       </Dialog>
-    </TransitionRoot>
+    </Transition.Root>
   );
 }
 
