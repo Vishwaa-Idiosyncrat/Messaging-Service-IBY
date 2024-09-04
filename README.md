@@ -8,7 +8,7 @@ A Next.js Web Application which provides users messaging service. User should in
     Real time message updates
     Personalised AI Powered Chatbot
 
-# Note: To view the functionalities, kindly visit Output_Images folder for Web App Snapshots.
+Note: To view the functionalities, kindly visit Output_Images folder for Web App Snapshots.
 # Technology used
 
     Frontend ---> Next.js
