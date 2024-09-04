@@ -10,9 +10,11 @@ A Next.js Web Application which provides users messaging service. User should in
 
 Clone this repository extract it and then open it in VS Code.
 Then open terminal in VS Code and type the following:
+
     cd .\Messaging-Service-IBY-main\
     npm install
     npm run dev
+
 
 The npm install will install all the dependencies required and then the npm run dev will create a local server.
 Run the local server and the app is ready to use.
