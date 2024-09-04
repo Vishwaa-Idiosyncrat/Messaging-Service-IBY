@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import { FaRegCommentDots } from 'react-icons/fa'; // Example icon from react-icons
+import { FaRegCommentDots } from 'react-icons/fa'; 
 
 const EmptyState = () => {
     return (
@@ -14,26 +14,26 @@ const EmptyState = () => {
                 flex
                 justify-center
                 items-center
-                bg-gray-900
-                text-white
+                bg-gray-100
+                text-gray-900
                 relative
                 overflow-hidden
                 before:content-['']
                 before:absolute
                 before:inset-0
                 before:bg-gradient-to-r
-                before:from-indigo-500
-                before:to-blue-500
-                before:opacity-30
+                before:from-gray-200
+                before:to-gray-300
+                before:opacity-60
                 before:blur-3xl
                 before:transition-all
                 before:duration-500
-                hover:before:opacity-50
+                hover:before:opacity-70
                 "
         >
             <div className="text-center items-center flex flex-col relative z-10">
-                <FaRegCommentDots className="text-6xl mb-4 animate-pulse" />
-                <p className="text-sm text-gray-300">
+                <FaRegCommentDots className="text-6xl mb-4 animate-pulse text-gray-600" />
+                <p className="text-sm text-gray-600">
                     Start a new conversation or select an existing one from the list.
                 </p>
             </div>
