@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { User } from "@prisma/client";
-
 import useRoutes from "../../hooks/useRoutes";
-
 import Avatar from "../Avatar";
 import DesktopItem from "./DesktopItem";
 import SettingsModal from "./SettingsModal";
 import React from "react";
+import { FaBrain } from 'react-icons/fa'; 
 
 interface DesktopSidebarProps {
   currentUser: User
@@ -20,7 +19,15 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
   const routes = useRoutes();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log({ currentUser })
+  const enhancedRoutes = [
+    ...routes,
+    {
+      label: "AI",
+      href: "https://solutions.imbesideyou.com/",
+      icon: FaBrain, 
+      active: false
+    }
+  ];
 
   return (
     <>
@@ -39,12 +46,15 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
           lg:w-20
           xl:px-6
           lg:overflow-y-auto
-          lg:bg-white
+          lg:bg-gray-900
           lg:border-r-[1px]
+          lg:border-gray-800
           lg:pb-4
           lg:flex
           lg:flex-col
           justify-between
+          dark:bg-gray-900
+          dark:border-gray-800
         "
       >
         <nav
@@ -64,7 +74,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
               space-y-1
             "
           >
-            {routes.map((item) => (
+            {enhancedRoutes.map((item) => (
               <DesktopItem
                 key={item.label}
                 href={item.href}
@@ -91,6 +101,10 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
               cursor-pointer
               hover:opacity-75
               transition
+              text-gray-300
+              hover:text-white
+              dark:text-gray-300
+              dark:hover:text-white
             "
           >
             <Avatar user={currentUser} />

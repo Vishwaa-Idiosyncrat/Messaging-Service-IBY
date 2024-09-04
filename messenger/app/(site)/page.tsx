@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div 
         className="
+            
             flex
             min-h-full
             flex-col
@@ -17,10 +18,10 @@ export default function Home() {
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
             <Image
                 alt="logo"
-                height="48"
-                width="48"
+                height="300"
+                width="300"
                 className="mx-auto w-auto"
-                src="/images/messenger.svg"
+                src="/images/logo.png"
             />
 
             <h2

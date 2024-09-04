@@ -26,23 +26,38 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
   };
 
   return ( 
-    <li onClick={handleClick}>
+    <li 
+      onClick={handleClick}
+      className={clsx(`
+        transition-transform 
+        duration-300 
+        ease-in-out 
+        transform 
+        hover:scale-105
+      `)}
+    >
       <Link 
         href={href}
         className={clsx(`
           group
           flex
+          items-center
           gap-x-3
           rounded-md
           p-3
           text-sm
-          leading-6
           font-semibold
-          text-gray-500
-          hover:text-black
-          hover:bg-gray-100
+          transition-colors
+          duration-300
+          ease-in-out
+          text-gray-300
+          hover:text-white
+          hover:bg-gray-800
+          dark:text-gray-400
+          dark:hover:text-gray-100
+          dark:hover:bg-gray-700
         `,
-          active && 'bg-gray-100 text-black'
+          active && 'bg-gray-800 text-white dark:bg-gray-600 dark:text-gray-100'
         )}
       >
         <Icon className="h-6 w-6 shrink-0" />
