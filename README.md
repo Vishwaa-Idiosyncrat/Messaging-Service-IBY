@@ -13,9 +13,13 @@ A Next.js Web Application which provides users messaging service. User should in
 
     Frontend ---> Next.js
     Backend ---> Node.js
+                    Prisma
+                    Next-Auth
+                    Pusher
+                    bcrypt
     NoSQL database ---> MongoDB
 
-#Future Implementations
+# Future Implementations
 
     Add Video & Audio calling feature
     Improve AI functionalities into our web app
