@@ -8,6 +8,9 @@ A Next.js Web Application which provides users messaging service. User should in
     Real time message updates
     Personalised AI Powered Chatbot
 
+
+# You can use the app by clicking the following link https://messaging-service-iby.vercel.app/
+
 Clone this repository extract it and then open it in VS Code.
 Then open terminal in VS Code and type the following:
 
@@ -18,6 +21,7 @@ Then open terminal in VS Code and type the following:
 
 The npm install will install all the dependencies required and then the npm run dev will create a local server.
 Run the local server and the app is ready to use.
+The github login does not work in localhost server as it is restricted to only one link. 
 
 # The Brain symbol in the Desktop Sidebar will redirect to https://solutions.imbesideyou.com/
 # The Robot Symbol below that is the Chatbot option, it can also be used from the chat button in the bottom right corner
